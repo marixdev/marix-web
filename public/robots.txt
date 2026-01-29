@@ -1,0 +1,11 @@
+# Marix Website Robots.txt
+# https://marix.dev
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marix.dev/sitemap.xml
+
+# Crawl-delay (optional, be nice to crawlers)
+Crawl-delay: 1
