@@ -447,50 +447,69 @@ const DocsContent = () => {
         <meta property="og:url" content={`https://marix.dev/docs/${currentLang}`} />
       </Helmet>
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50">
-        <div className="flex items-center h-16">
-          {/* Logo section - aligned with sidebar width */}
-          <div className="w-72 flex items-center gap-4 px-4 shrink-0">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/90 border-b border-border/50">
+        <div className="flex items-center justify-between h-14 px-3 sm:px-4 lg:px-6">
+          {/* Left: Menu + Logo */}
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <button
-              className="lg:hidden p-2 rounded-xl hover:bg-muted transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors shrink-0"
               onClick={() => setSidebarOpen(!sidebarOpen)}
+              aria-label="Toggle menu"
             >
               {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+            <Link to="/" className="flex items-center gap-2 shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
                 <Terminal className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold text-foreground">Marix</span>
+              <span className="text-lg font-bold text-foreground hidden sm:block">Marix</span>
             </Link>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-foreground font-medium">{t.docs.documentation}</span>
+            <span className="text-muted-foreground hidden sm:block">/</span>
+            <span className="text-foreground font-medium text-sm sm:text-base truncate hidden sm:block">{t.docs.documentation}</span>
           </div>
 
-          {/* Right Controls */}
-          <div className="flex-1 flex items-center justify-end gap-3 px-4 sm:px-6 lg:px-8">
+          {/* Right: Controls */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <ThemeToggle />
             <LanguageSelector />
             <Link
               to="/"
-              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-muted hover:bg-muted/80 transition-colors text-sm font-medium"
+              className="flex items-center justify-center w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors text-sm font-medium"
+              aria-label="Home"
             >
               <Home className="w-4 h-4" />
-              {t.docs.home}
+              <span className="hidden sm:inline sm:ml-1.5">{t.docs.home}</span>
             </Link>
           </div>
         </div>
       </header>
 
-      <div className="flex pt-16">
+      <div className="flex pt-14">
+        {/* Mobile Overlay */}
+        {sidebarOpen && (
+          <div 
+            className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
+        
         {/* Sidebar */}
         <aside
-          className={`fixed lg:sticky top-16 left-0 z-40 w-72 h-[calc(100vh-4rem)] bg-card/50 backdrop-blur-sm border-r border-border overflow-y-auto transition-transform duration-300 ${
+          className={`fixed lg:sticky top-14 left-0 z-40 w-72 h-[calc(100vh-3.5rem)] bg-background lg:bg-card/50 backdrop-blur-sm border-r border-border overflow-y-auto transition-transform duration-300 shadow-xl lg:shadow-none ${
             sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
           }`}
         >
           <div className="p-4">
-            
+            {/* Mobile: Logo + Title */}
+            <div className="flex lg:hidden items-center gap-2 mb-4 pb-4 border-b border-border">
+              <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
+                <Terminal className="w-4 h-4 text-white" />
+              </div>
+              <div>
+                <div className="font-bold text-foreground">Marix</div>
+                <div className="text-xs text-muted-foreground">{t.docs.documentation}</div>
+              </div>
+            </div>
 
             {/* Search */}
             <div className="relative mb-4">
@@ -505,27 +524,27 @@ const DocsContent = () => {
             </div>
 
             {/* Navigation */}
-            <nav className="space-y-2" key={`nav-${currentLang}`}>
+            <nav className="space-y-1" key={`nav-${currentLang}`}>
               {sidebarLoading ? (
                 <div className="flex items-center justify-center py-8">
                   <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                 </div>
               ) : (
               filteredSidebar.map((section, index) => (
-                <div key={`${currentLang}-${section.slug}-${index}`}>
+                <div key={`${currentLang}-${section.slug}-${index}`} className="mb-2">
                   <button
                     onClick={() => toggleSection(section.slug)}
-                    className="flex items-center justify-between w-full px-3 py-2 rounded-lg text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                    className="flex items-center justify-between w-full px-3 py-2.5 rounded-xl text-sm font-semibold text-foreground bg-muted/50 hover:bg-muted transition-colors"
                   >
                     <span>{section.title}</span>
                     {expandedSections.includes(section.slug) ? (
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown className="w-4 h-4 text-muted-foreground" />
                     ) : (
-                      <ChevronRight className="w-4 h-4" />
+                      <ChevronRight className="w-4 h-4 text-muted-foreground" />
                     )}
                   </button>
                   {expandedSections.includes(section.slug) && section.children && (
-                    <div className="ml-3 mt-1 space-y-1 border-l border-border pl-3">
+                    <div className="ml-3 mt-1 space-y-0.5 border-l-2 border-border pl-3">
                       {section.children.map((item) => (
                         <Link
                           key={item.slug}
@@ -533,8 +552,8 @@ const DocsContent = () => {
                           onClick={() => setSidebarOpen(false)}
                           className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
                             isActive(item.slug)
-                              ? "bg-primary/10 text-primary font-medium"
-                              : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                              ? "bg-primary/15 text-primary font-medium border-l-2 border-primary -ml-[14px] pl-[22px]"
+                              : "text-foreground/70 hover:text-foreground hover:bg-muted/70"
                           }`}
                         >
                           {item.title}
@@ -768,10 +787,25 @@ const DocsContent = () => {
               </aside>
             )}
           </div>
+          
+          {/* Footer - Mobile: static center, Desktop: fixed right */}
+          <footer className="lg:hidden mt-16 py-6 border-t border-border text-center text-sm text-muted-foreground">
+            <p>
+              {t.footer.madeWith} ❤️ {t.footer.by}{" "}
+              <a
+                href="https://github.com/marixdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                marixdev
+              </a>
+            </p>
+          </footer>
         </main>
-
-        {/* Footer */}
-        <footer className="fixed bottom-4 right-4 text-sm text-muted-foreground">
+        
+        {/* Footer - Desktop only: fixed right */}
+        <footer className="hidden lg:block fixed bottom-4 right-4 text-sm text-muted-foreground">
           <p>
             {t.footer.madeWith} ❤️ {t.footer.by}{" "}
             <a
