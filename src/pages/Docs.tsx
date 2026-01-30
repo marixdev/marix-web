@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider, useLanguage } from "@/i18n/LanguageContext";
 import translations, { Language } from "@/i18n/translations";
@@ -436,6 +437,15 @@ const DocsContent = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{`${t.docs.documentation} - Marix`}</title>
+        <meta name="description" content={t.seo.description} />
+        <meta name="keywords" content={t.seo.keywords} />
+        <link rel="canonical" href={`https://marix.dev/docs/${currentLang}`} />
+        <meta property="og:title" content={`${t.docs.documentation} - Marix`} />
+        <meta property="og:description" content={t.seo.description} />
+        <meta property="og:url" content={`https://marix.dev/docs/${currentLang}`} />
+      </Helmet>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50">
         <div className="flex items-center h-16">

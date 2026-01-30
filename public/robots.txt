@@ -3,9 +3,23 @@
 
 User-agent: *
 Allow: /
+Allow: /docs/
+
+# Disallow admin/private areas (if any)
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://marix.dev/sitemap.xml
 
 # Crawl-delay (optional, be nice to crawlers)
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1

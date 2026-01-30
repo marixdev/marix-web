@@ -135,6 +135,11 @@ export interface Translations {
     onThisPage: string;
     searchDocs: string;
   };
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+  };
   lang: string;
 }
 
@@ -247,6 +252,11 @@ const translations: Record<Language, Translations> = {
       onThisPage: 'On this page',
       searchDocs: 'Search docs...',
     },
+    seo: {
+      title: 'Marix - Modern Zero-Knowledge SSH Client',
+      description: 'Secure SSH client with client-side encryption. Connect via SSH, SFTP, FTP, RDP with zero-knowledge security. Free download for Windows, macOS, Linux.',
+      keywords: 'SSH client, SFTP client, FTP client, RDP client, zero-knowledge encryption, terminal emulator, secure SSH, SSH manager, remote server management, Argon2id encryption, database client, MySQL client, PostgreSQL client, SSH key manager, port forwarding, Marix',
+    },
     lang: 'en',
   },
   vi: {
@@ -356,6 +366,11 @@ const translations: Record<Language, Translations> = {
       next: 'Tiếp',
       onThisPage: 'Trên trang này',
       searchDocs: 'Tìm kiếm...',
+    },
+    seo: {
+      title: 'Marix - Ứng dụng SSH Client Zero-Knowledge Hiện Đại',
+      description: 'SSH Client bảo mật với mã hóa phía client. Kết nối SSH, SFTP, FTP, RDP với bảo mật zero-knowledge. Tải miễn phí cho Windows, macOS, Linux.',
+      keywords: 'SSH client, SFTP client, FTP client, RDP client, mã hóa zero-knowledge, terminal, SSH bảo mật, quản lý server, mã hóa Argon2id, kết nối database, MySQL, PostgreSQL, quản lý SSH key, port forwarding, Marix, phần mềm SSH',
     },
     lang: 'vi',
   },
@@ -467,6 +482,11 @@ const translations: Record<Language, Translations> = {
       onThisPage: '本页目录',
       searchDocs: '搜索文档...',
     },
+    seo: {
+      title: 'Marix - 现代零知识 SSH 客户端',
+      description: '采用客户端加密的安全 SSH 客户端。通过 SSH、SFTP、FTP、RDP 连接，零知识安全。免费下载 Windows、macOS、Linux 版本。',
+      keywords: 'SSH客户端, SFTP客户端, FTP客户端, RDP客户端, 零知识加密, 终端模拟器, 安全SSH, SSH管理器, 远程服务器管理, Argon2id加密, 数据库客户端, MySQL客户端, PostgreSQL客户端, SSH密钥管理, 端口转发, Marix',
+    },
     lang: 'zh',
   },
   ja: {
@@ -576,6 +596,11 @@ const translations: Record<Language, Translations> = {
       next: '次へ',
       onThisPage: 'このページの内容',
       searchDocs: 'ドキュメントを検索...',
+    },
+    seo: {
+      title: 'Marix - モダン ゼロ知識 SSH クライアント',
+      description: 'クライアントサイド暗号化を備えた安全なSSHクライアント。SSH、SFTP、FTP、RDPでゼロ知識セキュリティ接続。Windows、macOS、Linux向け無料ダウンロード。',
+      keywords: 'SSHクライアント, SFTPクライアント, FTPクライアント, RDPクライアント, ゼロ知識暗号化, ターミナルエミュレータ, 安全なSSH, SSHマネージャー, リモートサーバー管理, Argon2id暗号化, データベースクライアント, MySQLクライアント, PostgreSQLクライアント, SSH鍵管理, ポートフォワーディング, Marix',
     },
     lang: 'ja',
   },
@@ -687,6 +712,11 @@ const translations: Record<Language, Translations> = {
       onThisPage: '이 페이지에서',
       searchDocs: '문서 검색...',
     },
+    seo: {
+      title: 'Marix - 모던 제로 지식 SSH 클라이언트',
+      description: '클라이언트 측 암호화를 갖춘 보안 SSH 클라이언트. SSH, SFTP, FTP, RDP로 제로 지식 보안 연결. Windows, macOS, Linux용 무료 다운로드.',
+      keywords: 'SSH 클라이언트, SFTP 클라이언트, FTP 클라이언트, RDP 클라이언트, 제로 지식 암호화, 터미널 에뮬레이터, 보안 SSH, SSH 관리자, 원격 서버 관리, Argon2id 암호화, 데이터베이스 클라이언트, MySQL 클라이언트, PostgreSQL 클라이언트, SSH 키 관리, 포트 포워딩, Marix',
+    },
     lang: 'ko',
   },
   de: {
@@ -796,6 +826,11 @@ const translations: Record<Language, Translations> = {
       next: 'Weiter',
       onThisPage: 'Auf dieser Seite',
       searchDocs: 'Docs durchsuchen...',
+    },
+    seo: {
+      title: 'Marix - Moderner Zero-Knowledge SSH-Client',
+      description: 'Sicherer SSH-Client mit clientseitiger Verschlüsselung. Verbinden Sie sich über SSH, SFTP, FTP, RDP mit Zero-Knowledge-Sicherheit. Kostenloser Download für Windows, macOS, Linux.',
+      keywords: 'SSH-Client, SFTP-Client, FTP-Client, RDP-Client, Zero-Knowledge-Verschlüsselung, Terminal-Emulator, sicheres SSH, SSH-Manager, Remote-Server-Verwaltung, Argon2id-Verschlüsselung, Datenbank-Client, MySQL-Client, PostgreSQL-Client, SSH-Schlüsselverwaltung, Portweiterleitung, Marix',
     },
     lang: 'de',
   },
@@ -907,6 +942,11 @@ const translations: Record<Language, Translations> = {
       onThisPage: 'Sur cette page',
       searchDocs: 'Rechercher...',
     },
+    seo: {
+      title: 'Marix - Client SSH Zero-Knowledge Moderne',
+      description: 'Client SSH sécurisé avec chiffrement côté client. Connectez-vous via SSH, SFTP, FTP, RDP avec une sécurité zero-knowledge. Téléchargement gratuit pour Windows, macOS, Linux.',
+      keywords: 'client SSH, client SFTP, client FTP, client RDP, chiffrement zero-knowledge, émulateur de terminal, SSH sécurisé, gestionnaire SSH, gestion de serveur distant, chiffrement Argon2id, client base de données, client MySQL, client PostgreSQL, gestion clés SSH, redirection de port, Marix',
+    },
     lang: 'fr',
   },
   es: {
@@ -1016,6 +1056,11 @@ const translations: Record<Language, Translations> = {
       next: 'Siguiente',
       onThisPage: 'En esta página',
       searchDocs: 'Buscar docs...',
+    },
+    seo: {
+      title: 'Marix - Cliente SSH Zero-Knowledge Moderno',
+      description: 'Cliente SSH seguro con cifrado del lado del cliente. Conéctese a través de SSH, SFTP, FTP, RDP con seguridad zero-knowledge. Descarga gratuita para Windows, macOS, Linux.',
+      keywords: 'cliente SSH, cliente SFTP, cliente FTP, cliente RDP, cifrado zero-knowledge, emulador de terminal, SSH seguro, gestor SSH, gestión de servidores remotos, cifrado Argon2id, cliente de base de datos, cliente MySQL, cliente PostgreSQL, gestión de claves SSH, reenvío de puertos, Marix',
     },
     lang: 'es',
   },
@@ -1127,6 +1172,11 @@ const translations: Record<Language, Translations> = {
       onThisPage: 'Nesta página',
       searchDocs: 'Pesquisar docs...',
     },
+    seo: {
+      title: 'Marix - Cliente SSH Zero-Knowledge Moderno',
+      description: 'Cliente SSH seguro com criptografia do lado do cliente. Conecte-se via SSH, SFTP, FTP, RDP com segurança zero-knowledge. Download gratuito para Windows, macOS, Linux.',
+      keywords: 'cliente SSH, cliente SFTP, cliente FTP, cliente RDP, criptografia zero-knowledge, emulador de terminal, SSH seguro, gerenciador SSH, gerenciamento de servidor remoto, criptografia Argon2id, cliente de banco de dados, cliente MySQL, cliente PostgreSQL, gerenciamento de chaves SSH, encaminhamento de porta, Marix',
+    },
     lang: 'pt',
   },
   ru: {
@@ -1236,6 +1286,11 @@ const translations: Record<Language, Translations> = {
       next: 'Далее',
       onThisPage: 'На этой странице',
       searchDocs: 'Поиск...',
+    },
+    seo: {
+      title: 'Marix - Современный SSH-клиент с нулевым знанием',
+      description: 'Безопасный SSH-клиент с шифрованием на стороне клиента. Подключайтесь через SSH, SFTP, FTP, RDP с безопасностью нулевого знания. Бесплатная загрузка для Windows, macOS, Linux.',
+      keywords: 'SSH-клиент, SFTP-клиент, FTP-клиент, RDP-клиент, шифрование нулевого знания, эмулятор терминала, безопасный SSH, менеджер SSH, управление удаленным сервером, шифрование Argon2id, клиент базы данных, клиент MySQL, клиент PostgreSQL, управление SSH-ключами, переадресация портов, Marix',
     },
     lang: 'ru',
   },
@@ -1347,6 +1402,11 @@ const translations: Record<Language, Translations> = {
       onThisPage: 'ในหน้านี้',
       searchDocs: 'ค้นหา...',
     },
+    seo: {
+      title: 'Marix - SSH Client สมัยใหม่ Zero-Knowledge',
+      description: 'SSH Client ที่ปลอดภัยพร้อมการเข้ารหัสฝั่งไคลเอนต์ เชื่อมต่อผ่าน SSH, SFTP, FTP, RDP ด้วยความปลอดภัย zero-knowledge ดาวน์โหลดฟรีสำหรับ Windows, macOS, Linux',
+      keywords: 'SSH client, SFTP client, FTP client, RDP client, การเข้ารหัส zero-knowledge, เทอร์มินัลอีมูเลเตอร์, SSH ปลอดภัย, SSH manager, จัดการเซิร์ฟเวอร์ระยะไกล, การเข้ารหัส Argon2id, database client, MySQL client, PostgreSQL client, จัดการ SSH key, port forwarding, Marix',
+    },
     lang: 'th',
   },
   id: {
@@ -1456,6 +1516,11 @@ const translations: Record<Language, Translations> = {
       next: 'Berikutnya',
       onThisPage: 'Di halaman ini',
       searchDocs: 'Cari docs...',
+    },
+    seo: {
+      title: 'Marix - Klien SSH Zero-Knowledge Modern',
+      description: 'Klien SSH aman dengan enkripsi sisi klien. Terhubung melalui SSH, SFTP, FTP, RDP dengan keamanan zero-knowledge. Unduh gratis untuk Windows, macOS, Linux.',
+      keywords: 'klien SSH, klien SFTP, klien FTP, klien RDP, enkripsi zero-knowledge, emulator terminal, SSH aman, manajer SSH, manajemen server jarak jauh, enkripsi Argon2id, klien database, klien MySQL, klien PostgreSQL, manajemen kunci SSH, port forwarding, Marix',
     },
     lang: 'id',
   },
@@ -1567,6 +1632,11 @@ const translations: Record<Language, Translations> = {
       onThisPage: 'Di halaman ini',
       searchDocs: 'Cari docs...',
     },
+    seo: {
+      title: 'Marix - Klien SSH Zero-Knowledge Moden',
+      description: 'Klien SSH selamat dengan penyulitan sisi klien. Sambung melalui SSH, SFTP, FTP, RDP dengan keselamatan zero-knowledge. Muat turun percuma untuk Windows, macOS, Linux.',
+      keywords: 'klien SSH, klien SFTP, klien FTP, klien RDP, penyulitan zero-knowledge, emulator terminal, SSH selamat, pengurus SSH, pengurusan pelayan jauh, penyulitan Argon2id, klien pangkalan data, klien MySQL, klien PostgreSQL, pengurusan kunci SSH, port forwarding, Marix',
+    },
     lang: 'ms',
   },
   fil: {
@@ -1676,6 +1746,11 @@ const translations: Record<Language, Translations> = {
       next: 'Susunod',
       onThisPage: 'Sa pahinang ito',
       searchDocs: 'Maghanap...',
+    },
+    seo: {
+      title: 'Marix - Modernong Zero-Knowledge SSH Client',
+      description: 'Ligtas na SSH client na may client-side encryption. Kumonekta sa pamamagitan ng SSH, SFTP, FTP, RDP na may zero-knowledge security. Libreng download para sa Windows, macOS, Linux.',
+      keywords: 'SSH client, SFTP client, FTP client, RDP client, zero-knowledge encryption, terminal emulator, ligtas na SSH, SSH manager, remote server management, Argon2id encryption, database client, MySQL client, PostgreSQL client, SSH key management, port forwarding, Marix',
     },
     lang: 'fil',
   },

@@ -8,11 +8,13 @@ import Download from "@/components/Download";
 import Changelog from "@/components/Changelog";
 import TechStack from "@/components/TechStack";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
+        <SEO page="home" />
         <div className="min-h-screen bg-background">
           <Header />
           <main>
