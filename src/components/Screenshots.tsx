@@ -6,19 +6,31 @@ const Screenshots = () => {
   const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  // Screenshots organized to match features display order
   const screenshots = [
+    // Core features - most important first
     { id: "terminal", key: 'terminal' as const, image: "/terminal.png" },
     { id: "sftp", key: 'sftp' as const, image: "/sftp.png" },
-    { id: "settings", key: 'settings' as const, image: "/settings.png" },
+    { id: "ftp", key: 'ftp' as const, image: "/ftp.png" },
     { id: "database", key: 'database' as const, image: "/database.png" },
+    // Network tools
+    { id: "websocket", key: 'websocket' as const, image: "/websocket.png" },
+    { id: "cloudflare", key: 'cloudflare' as const, image: "/cf.png" },
     { id: "tools", key: 'tools' as const, image: "/tools.png" },
-    { id: "snippets", key: 'snippets' as const, image: "/snippets.png" },
-    { id: "knownhosts", key: 'knownhosts' as const, image: "/knownhosts.png" },
     { id: "lookup", key: 'lookup' as const, image: "/lookup.png" },
+    // Security & management
+    { id: "applock", key: 'applock' as const, image: "/applock.png" },
+    { id: "twofa", key: 'twofa' as const, image: "/2fa.png" },
+    { id: "sshkeys", key: 'sshkeys' as const, image: "/sshkey.png" },
+    { id: "knownhosts", key: 'knownhosts' as const, image: "/knownhosts.png" },
+    { id: "backup", key: 'backup' as const, image: "/backup.png" },
+    // Utilities
+    { id: "benchmark", key: 'benchmark' as const, image: "/benchmark.png" },
+    { id: "commandhistory", key: 'commandhistory' as const, image: "/cmh.png" },
     { id: "portforward", key: 'portforward' as const, image: "/portfoward.png" },
     { id: "sendfile", key: 'sendfile' as const, image: "/sendfile.png" },
-    { id: "applock", key: 'applock' as const, image: "/applock.png" },
-    { id: "websocket", key: 'websocket' as const, image: "/websocket.png" },
+    { id: "snippets", key: 'snippets' as const, image: "/snippets.png" },
+    { id: "settings", key: 'settings' as const, image: "/settings.png" },
   ];
 
   return (

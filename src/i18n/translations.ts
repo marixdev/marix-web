@@ -57,6 +57,8 @@ export interface Translations {
       lanSharing: { title: string; description: string };
       customHotkeys: { title: string; description: string };
       appLock: { title: string; description: string };
+      serverBenchmark: { title: string; description: string };
+      commandHistory: { title: string; description: string };
     };
   };
   screenshots: {
@@ -66,6 +68,7 @@ export interface Translations {
     items: {
       terminal: { title: string; description: string };
       sftp: { title: string; description: string };
+      ftp: { title: string; description: string };
       settings: { title: string; description: string };
       database: { title: string; description: string };
       tools: { title: string; description: string };
@@ -76,6 +79,12 @@ export interface Translations {
       sendfile: { title: string; description: string };
       applock: { title: string; description: string };
       websocket: { title: string; description: string };
+      benchmark: { title: string; description: string };
+      commandhistory: { title: string; description: string };
+      twofa: { title: string; description: string };
+      cloudflare: { title: string; description: string };
+      sshkeys: { title: string; description: string };
+      backup: { title: string; description: string };
     };
   };
   download: {
@@ -160,6 +169,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Cloud Backup', description: 'Backup to Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Command Snippets', description: 'Save & organize your frequently used commands' },
         appLock: { title: 'App Lock', description: 'Secure your app with password or biometric authentication' },
+        serverBenchmark: { title: 'Server Benchmark', description: 'Test CPU, disk & network performance of your servers' },
+        commandHistory: { title: 'Command History', description: 'Recall previously executed commands with Tab key' },
       },
     },
     screenshots: {
@@ -169,6 +180,7 @@ const translations: Record<Language, Translations> = {
       items: {
         terminal: { title: 'Terminal View', description: 'Modern SSH terminal interface' },
         sftp: { title: 'SFTP Manager', description: 'Visual file management' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP and FTPS file transfer' },
         settings: { title: 'Settings', description: 'Flexible configuration' },
         database: { title: 'Database Client', description: 'MySQL, PostgreSQL, MongoDB, Redis' },
         tools: { title: 'Network Tools', description: 'DNS, Ping, Traceroute, WHOIS' },
@@ -179,6 +191,12 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN Transfer', description: 'Share files with 6-digit code' },
         applock: { title: 'App Lock', description: 'Secure with password protection' },
         websocket: { title: 'WebSocket', description: 'Real-time WebSocket testing' },
+        benchmark: { title: 'Server Benchmark', description: 'Test server performance' },
+        commandhistory: { title: 'Command History', description: 'Recall executed commands' },
+        twofa: { title: '2FA / TOTP', description: 'Built-in authenticator' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Manage DNS records' },
+        sshkeys: { title: 'SSH Keys', description: 'Generate & manage SSH keys' },
+        backup: { title: 'Backup & Restore', description: 'Cloud backup with encryption' },
       },
     },
     download: {
@@ -261,6 +279,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Cloud Backup', description: 'Sao lưu lên Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Command Snippets', description: 'Lưu và sắp xếp các lệnh thường dùng' },
         appLock: { title: 'Khóa ứng dụng', description: 'Bảo vệ ứng dụng bằng mật khẩu hoặc sinh trắc học' },
+        serverBenchmark: { title: 'Server Benchmark', description: 'Kiểm tra hiệu năng CPU, ổ đĩa & mạng của server' },
+        commandHistory: { title: 'Lịch sử lệnh', description: 'Gọi lại các lệnh đã thực thi bằng phím Tab' },
       },
     },
     screenshots: {
@@ -270,6 +290,7 @@ const translations: Record<Language, Translations> = {
       items: {
         terminal: { title: 'Terminal View', description: 'Giao diện terminal SSH hiện đại' },
         sftp: { title: 'SFTP Manager', description: 'Quản lý file trực quan' },
+        ftp: { title: 'FTP / FTPS', description: 'Truyền file qua FTP và FTPS' },
         settings: { title: 'Cài đặt', description: 'Cấu hình linh hoạt' },
         database: { title: 'Database Client', description: 'MySQL, PostgreSQL, MongoDB, Redis' },
         tools: { title: 'Network Tools', description: 'DNS, Ping, Traceroute, WHOIS' },
@@ -280,6 +301,12 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN Transfer', description: 'Chia sẻ file với mã 6 chữ số' },
         applock: { title: 'Khóa ứng dụng', description: 'Bảo vệ bằng mật khẩu' },
         websocket: { title: 'WebSocket', description: 'Kiểm tra WebSocket real-time' },
+        benchmark: { title: 'Server Benchmark', description: 'Kiểm tra hiệu năng server' },
+        commandhistory: { title: 'Lịch sử lệnh', description: 'Gọi lại các lệnh đã thực thi' },
+        twofa: { title: '2FA / TOTP', description: 'Xác thực 2 yếu tố tích hợp' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Quản lý bản ghi DNS' },
+        sshkeys: { title: 'SSH Keys', description: 'Tạo & quản lý SSH keys' },
+        backup: { title: 'Sao lưu & Khôi phục', description: 'Sao lưu cloud với mã hóa' },
       },
     },
     download: {
@@ -362,6 +389,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: '云备份', description: '备份到 Google Drive、GitHub、GitLab 和 Box' },
         customHotkeys: { title: '命令片段', description: '保存和整理常用命令' },
         appLock: { title: '应用锁定', description: '使用密码或生物识别保护应用' },
+        serverBenchmark: { title: '服务器性能测试', description: '测试服务器的 CPU、磁盘和网络性能' },
+        commandHistory: { title: '命令历史', description: '使用 Tab 键调用已执行的命令' },
       },
     },
     screenshots: {
@@ -371,6 +400,7 @@ const translations: Record<Language, Translations> = {
       items: {
         terminal: { title: '终端视图', description: '现代 SSH 终端界面' },
         sftp: { title: 'SFTP 管理器', description: '可视化文件管理' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP 和 FTPS 文件传输' },
         settings: { title: '设置', description: '灵活配置' },
         database: { title: '数据库客户端', description: 'MySQL, PostgreSQL, MongoDB, Redis' },
         tools: { title: '网络工具', description: 'DNS, Ping, Traceroute, WHOIS' },
@@ -381,6 +411,12 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: '局域网传输', description: '使用6位代码分享文件' },
         applock: { title: '应用锁', description: '密码保护' },
         websocket: { title: 'WebSocket', description: '实时 WebSocket 测试' },
+        benchmark: { title: '服务器性能测试', description: '测试服务器性能' },
+        commandhistory: { title: '命令历史', description: '调用已执行的命令' },
+        twofa: { title: '2FA / TOTP', description: '内置身份验证器' },
+        cloudflare: { title: 'Cloudflare DNS', description: '管理 DNS 记录' },
+        sshkeys: { title: 'SSH 密钥', description: '生成和管理 SSH 密钥' },
+        backup: { title: '备份和恢复', description: '加密云备份' },
       },
     },
     download: {
@@ -463,6 +499,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'クラウドバックアップ', description: 'Google Drive、GitHub、GitLab、Box にバックアップ' },
         customHotkeys: { title: 'コマンドスニペット', description: 'よく使うコマンドを保存・整理' },
         appLock: { title: 'アプリロック', description: 'パスワードまたは生体認証でアプリを保護' },
+        serverBenchmark: { title: 'サーバーベンチマーク', description: 'サーバーのCPU、ディスク、ネットワーク性能をテスト' },
+        commandHistory: { title: 'コマンド履歴', description: 'Tabキーで実行済みコマンドを呼び出し' },
       },
     },
     screenshots: {
@@ -472,6 +510,7 @@ const translations: Record<Language, Translations> = {
       items: {
         terminal: { title: 'ターミナルビュー', description: 'モダンな SSH ターミナル' },
         sftp: { title: 'SFTP マネージャー', description: 'ビジュアルファイル管理' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP と FTPS ファイル転送' },
         settings: { title: '設定', description: '柔軟な設定' },
         database: { title: 'データベースクライアント', description: 'MySQL, PostgreSQL, MongoDB, Redis' },
         tools: { title: 'ネットワークツール', description: 'DNS, Ping, Traceroute, WHOIS' },
@@ -482,6 +521,12 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN転送', description: '6桁コードでファイル共有' },
         applock: { title: 'アプリロック', description: 'パスワード保護' },
         websocket: { title: 'WebSocket', description: 'リアルタイム WebSocket テスト' },
+        benchmark: { title: 'サーバーベンチマーク', description: 'サーバー性能テスト' },
+        commandhistory: { title: 'コマンド履歴', description: '実行済みコマンドを呼び出し' },
+        twofa: { title: '2FA / TOTP', description: '内蔵認証器' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'DNSレコード管理' },
+        sshkeys: { title: 'SSH キー', description: 'SSHキーの生成と管理' },
+        backup: { title: 'バックアップと復元', description: '暗号化クラウドバックアップ' },
       },
     },
     download: {
@@ -564,6 +609,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: '클라우드 백업', description: 'Google Drive, GitHub, GitLab, Box에 백업' },
         customHotkeys: { title: '명령어 스니펫', description: '자주 사용하는 명령어 저장 및 정리' },
         appLock: { title: '앱 잠금', description: '비밀번호 또는 생체 인증으로 앱 보호' },
+        serverBenchmark: { title: '서버 벤치마크', description: '서버의 CPU, 디스크, 네트워크 성능 테스트' },
+        commandHistory: { title: '명령어 기록', description: 'Tab 키로 실행한 명령어 호출' },
       },
     },
     screenshots: {
@@ -583,6 +630,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN 전송', description: '6자리 코드로 파일 공유' },
         applock: { title: '앱 잠금', description: '비밀번호 보호' },
         websocket: { title: 'WebSocket', description: '실시간 WebSocket 테스트' },
+        benchmark: { title: '서버 벤치마크', description: '서버 성능 테스트' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: '명령어 기록', description: '명령어 기록' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'SSH 키', description: 'SSH 키' },
+        backup: { title: '백업 및 복원', description: '백업 및 복원' },
       },
     },
     download: {
@@ -665,6 +719,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Cloud-Backup', description: 'Backup auf Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Befehlssnippets', description: 'Häufig verwendete Befehle speichern & organisieren' },
         appLock: { title: 'App-Sperre', description: 'App mit Passwort oder biometrischer Authentifizierung schützen' },
+        serverBenchmark: { title: 'Server-Benchmark', description: 'CPU-, Festplatten- und Netzwerkleistung des Servers testen' },
+        commandHistory: { title: 'Befehlsverlauf', description: 'Ausgeführte Befehle mit Tab-Taste aufrufen' },
       },
     },
     screenshots: {
@@ -684,6 +740,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN-Übertragung', description: 'Dateien mit 6-stelligem Code teilen' },
         applock: { title: 'App-Sperre', description: 'Passwortschutz' },
         websocket: { title: 'WebSocket', description: 'Echtzeit-WebSocket-Test' },
+        benchmark: { title: 'Server-Benchmark', description: 'Server-Leistungstest' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'Befehlsverlauf', description: 'Befehlsverlauf' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'SSH-Schlüssel', description: 'SSH-Schlüssel' },
+        backup: { title: 'Backup & Wiederherstellung', description: 'Backup & Wiederherstellung' },
       },
     },
     download: {
@@ -766,6 +829,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Sauvegarde Cloud', description: 'Sauvegarde sur Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Snippets de Commandes', description: 'Sauvegarder et organiser vos commandes fréquentes' },
         appLock: { title: 'Verrouillage App', description: 'Protéger l\'app avec mot de passe ou biométrie' },
+        serverBenchmark: { title: 'Benchmark Serveur', description: 'Tester les performances CPU, disque et réseau du serveur' },
+        commandHistory: { title: 'Historique des commandes', description: 'Rappeler les commandes exécutées avec Tab' },
       },
     },
     screenshots: {
@@ -785,6 +850,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'Transfert LAN', description: 'Partage avec code à 6 chiffres' },
         applock: { title: 'Verrouillage App', description: 'Protection par mot de passe' },
         websocket: { title: 'WebSocket', description: 'Test WebSocket en temps réel' },
+        benchmark: { title: 'Benchmark Serveur', description: 'Test de performance serveur' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'Historique', description: 'Historique' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'Clés SSH', description: 'Clés SSH' },
+        backup: { title: 'Sauvegarde & Restauration', description: 'Sauvegarde & Restauration' },
       },
     },
     download: {
@@ -867,6 +939,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Respaldo en la Nube', description: 'Respaldo en Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Snippets de Comandos', description: 'Guardar y organizar comandos frecuentes' },
         appLock: { title: 'Bloqueo de App', description: 'Proteger la app con contraseña o autenticación biométrica' },
+        serverBenchmark: { title: 'Benchmark de Servidor', description: 'Probar rendimiento de CPU, disco y red del servidor' },
+        commandHistory: { title: 'Historial de comandos', description: 'Recuperar comandos ejecutados con Tab' },
       },
     },
     screenshots: {
@@ -886,6 +960,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'Transferencia LAN', description: 'Compartir con código de 6 dígitos' },
         applock: { title: 'Bloqueo de App', description: 'Protección con contraseña' },
         websocket: { title: 'WebSocket', description: 'Prueba WebSocket en tiempo real' },
+        benchmark: { title: 'Benchmark de Servidor', description: 'Prueba de rendimiento del servidor' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'Historial', description: 'Historial' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'Claves SSH', description: 'Claves SSH' },
+        backup: { title: 'Respaldo y Restauración', description: 'Respaldo y Restauración' },
       },
     },
     download: {
@@ -968,6 +1049,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Backup na Nuvem', description: 'Backup no Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Snippets de Comandos', description: 'Salvar e organizar comandos frequentes' },
         appLock: { title: 'Bloqueio de App', description: 'Proteger o app com senha ou autenticação biométrica' },
+        serverBenchmark: { title: 'Benchmark de Servidor', description: 'Testar desempenho de CPU, disco e rede do servidor' },
+        commandHistory: { title: 'Histórico de comandos', description: 'Recuperar comandos executados com Tab' },
       },
     },
     screenshots: {
@@ -987,6 +1070,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'Transferência LAN', description: 'Compartilhar com código de 6 dígitos' },
         applock: { title: 'Bloqueio de App', description: 'Proteção com senha' },
         websocket: { title: 'WebSocket', description: 'Teste WebSocket em tempo real' },
+        benchmark: { title: 'Benchmark de Servidor', description: 'Teste de desempenho do servidor' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'Histórico', description: 'Histórico' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'Chaves SSH', description: 'Chaves SSH' },
+        backup: { title: 'Backup e Restauração', description: 'Backup e Restauração' },
       },
     },
     download: {
@@ -1069,6 +1159,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Облачное резервирование', description: 'Резервное копирование в Google Drive, GitHub, GitLab и Box' },
         customHotkeys: { title: 'Сниппеты команд', description: 'Сохранение и организация часто используемых команд' },
         appLock: { title: 'Блокировка приложения', description: 'Защита приложения паролем или биометрией' },
+        serverBenchmark: { title: 'Бенчмарк сервера', description: 'Тестирование производительности CPU, диска и сети сервера' },
+        commandHistory: { title: 'История команд', description: 'Вызов выполненных команд клавишей Tab' },
       },
     },
     screenshots: {
@@ -1088,6 +1180,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN Transfer', description: 'Обмен файлами с 6-значным кодом' },
         applock: { title: 'Блокировка', description: 'Защита паролем' },
         websocket: { title: 'WebSocket', description: 'Тест WebSocket в реальном времени' },
+        benchmark: { title: 'Бенчмарк сервера', description: 'Тест производительности сервера' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'История команд', description: 'История команд' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'SSH ключи', description: 'SSH ключи' },
+        backup: { title: 'Резервное копирование', description: 'Резервное копирование' },
       },
     },
     download: {
@@ -1170,6 +1269,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'สำรองข้อมูลคลาวด์', description: 'สำรองไปยัง Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Command Snippets', description: 'บันทึกและจัดระเบียบคำสั่งที่ใช้บ่อย' },
         appLock: { title: 'ล็อคแอป', description: 'ปกป้องแอปด้วยรหัสผ่านหรือไบโอเมตริก' },
+        serverBenchmark: { title: 'ทดสอบเซิร์ฟเวอร์', description: 'ทดสอบประสิทธิภาพ CPU, ดิสก์ และเครือข่ายของเซิร์ฟเวอร์' },
+        commandHistory: { title: 'ประวัติคำสั่ง', description: 'เรียกคืนคำสั่งที่ดำเนินการด้วยปุ่ม Tab' },
       },
     },
     screenshots: {
@@ -1189,6 +1290,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN Transfer', description: 'แชร์ไฟล์ด้วยรหัส 6 หลัก' },
         applock: { title: 'ล็อคแอป', description: 'ปกป้องด้วยรหัสผ่าน' },
         websocket: { title: 'WebSocket', description: 'ทดสอบ WebSocket แบบเรียลไทม์' },
+        benchmark: { title: 'ทดสอบเซิร์ฟเวอร์', description: 'ทดสอบประสิทธิภาพเซิร์ฟเวอร์' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'ประวัติคำสั่ง', description: 'ประวัติคำสั่ง' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'SSH Keys', description: 'SSH Keys' },
+        backup: { title: 'สำรองและกู้คืน', description: 'สำรองและกู้คืน' },
       },
     },
     download: {
@@ -1271,6 +1379,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Cadangan Cloud', description: 'Cadangan ke Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Command Snippets', description: 'Simpan dan atur perintah yang sering digunakan' },
         appLock: { title: 'Kunci Aplikasi', description: 'Lindungi aplikasi dengan kata sandi atau biometrik' },
+        serverBenchmark: { title: 'Benchmark Server', description: 'Uji performa CPU, disk & jaringan server' },
+        commandHistory: { title: 'Riwayat Perintah', description: 'Panggil perintah yang dijalankan dengan Tab' },
       },
     },
     screenshots: {
@@ -1290,6 +1400,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN Transfer', description: 'Berbagi file dengan kode 6 digit' },
         applock: { title: 'Kunci Aplikasi', description: 'Proteksi kata sandi' },
         websocket: { title: 'WebSocket', description: 'Uji WebSocket real-time' },
+        benchmark: { title: 'Benchmark Server', description: 'Uji performa server' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'Riwayat Perintah', description: 'Riwayat Perintah' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'Kunci SSH', description: 'Kunci SSH' },
+        backup: { title: 'Cadangan & Pemulihan', description: 'Cadangan & Pemulihan' },
       },
     },
     download: {
@@ -1372,6 +1489,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Sandaran Awan', description: 'Sandaran ke Google Drive, GitHub, GitLab & Box' },
         customHotkeys: { title: 'Command Snippets', description: 'Simpan dan susun perintah yang kerap digunakan' },
         appLock: { title: 'Kunci Aplikasi', description: 'Lindungi aplikasi dengan kata laluan atau biometrik' },
+        serverBenchmark: { title: 'Penanda Aras Pelayan', description: 'Uji prestasi CPU, cakera & rangkaian pelayan' },
+        commandHistory: { title: 'Sejarah Perintah', description: 'Panggil semula perintah dengan Tab' },
       },
     },
     screenshots: {
@@ -1391,6 +1510,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN Transfer', description: 'Kongsi fail dengan kod 6 digit' },
         applock: { title: 'Kunci Aplikasi', description: 'Perlindungan kata laluan' },
         websocket: { title: 'WebSocket', description: 'Uji WebSocket masa nyata' },
+        benchmark: { title: 'Penanda Aras Pelayan', description: 'Uji prestasi pelayan' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'Sejarah Perintah', description: 'Sejarah Perintah' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'Kunci SSH', description: 'Kunci SSH' },
+        backup: { title: 'Sandaran & Pemulihan', description: 'Sandaran & Pemulihan' },
       },
     },
     download: {
@@ -1473,6 +1599,8 @@ const translations: Record<Language, Translations> = {
         lanSharing: { title: 'Cloud Backup', description: 'Backup sa Google Drive, GitHub, GitLab at Box' },
         customHotkeys: { title: 'Command Snippets', description: 'I-save at ayusin ang mga madalas gamitin na commands' },
         appLock: { title: 'App Lock', description: 'Protektahan ang app gamit ang password o biometric' },
+        serverBenchmark: { title: 'Server Benchmark', description: 'Subukan ang CPU, disk at network performance ng server' },
+        commandHistory: { title: 'Command History', description: 'I-recall ang mga na-execute na command gamit ang Tab' },
       },
     },
     screenshots: {
@@ -1492,6 +1620,13 @@ const translations: Record<Language, Translations> = {
         sendfile: { title: 'LAN Transfer', description: 'Ibahagi gamit ang 6-digit code' },
         applock: { title: 'App Lock', description: 'Proteksyon ng password' },
         websocket: { title: 'WebSocket', description: 'Real-time WebSocket testing' },
+        benchmark: { title: 'Server Benchmark', description: 'Subukan ang server performance' },
+        ftp: { title: 'FTP / FTPS', description: 'FTP / FTPS' },
+        commandhistory: { title: 'Command History', description: 'Command History' },
+        twofa: { title: '2FA / TOTP', description: '2FA / TOTP' },
+        cloudflare: { title: 'Cloudflare DNS', description: 'Cloudflare DNS' },
+        sshkeys: { title: 'SSH Keys', description: 'SSH Keys' },
+        backup: { title: 'Backup at Restore', description: 'Backup at Restore' },
       },
     },
     download: {

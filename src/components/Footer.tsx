@@ -1,94 +1,11 @@
 import { Terminal, Github, ExternalLink, Heart, MessageCircle, Users, FileText } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-// Visitor tracking with 24h cache
-interface VisitorInfo {
-  ip: string;
-  isp: string;
-  timestamp: number;
-}
-
-const VISITOR_CACHE_KEY = "marix_visitor_info";
-const VISITOR_COUNT_KEY = "marix_visitor_count_24h";
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+import { FreeVisitorCounter } from '@rundevelrun/free-visitor-counter';
 
 const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
-  const [visitorInfo, setVisitorInfo] = useState<VisitorInfo | null>(null);
-  const [visitorCount, setVisitorCount] = useState<number>(0);
-
-  useEffect(() => {
-    const fetchVisitorInfo = async () => {
-      try {
-        // Check cache first
-        const cached = localStorage.getItem(VISITOR_CACHE_KEY);
-        const now = Date.now();
-        
-        if (cached) {
-          const parsedCache = JSON.parse(cached) as VisitorInfo;
-          // If cache is valid (within 24h), use it
-          if (now - parsedCache.timestamp < CACHE_DURATION) {
-            setVisitorInfo(parsedCache);
-            updateVisitorCount(parsedCache.ip, false);
-            return;
-          }
-        }
-
-        // Fetch new IP info
-        const response = await fetch('https://ipapi.co/json/');
-        if (response.ok) {
-          const data = await response.json();
-          const newVisitorInfo: VisitorInfo = {
-            ip: data.ip || 'Unknown',
-            isp: data.org || data.asn || 'Unknown ISP',
-            timestamp: now,
-          };
-          
-          // Cache the result
-          localStorage.setItem(VISITOR_CACHE_KEY, JSON.stringify(newVisitorInfo));
-          setVisitorInfo(newVisitorInfo);
-          updateVisitorCount(newVisitorInfo.ip, true);
-        }
-      } catch (error) {
-        console.error('Failed to fetch visitor info:', error);
-        setVisitorInfo({ ip: 'Unknown', isp: 'Unknown', timestamp: Date.now() });
-      }
-    };
-
-    const updateVisitorCount = (ip: string, isNewFetch: boolean) => {
-      try {
-        const now = Date.now();
-        const stored = localStorage.getItem(VISITOR_COUNT_KEY);
-        let visitors: { ip: string; timestamp: number }[] = [];
-        
-        if (stored) {
-          visitors = JSON.parse(stored);
-          // Filter out entries older than 24h
-          visitors = visitors.filter(v => now - v.timestamp < CACHE_DURATION);
-        }
-        
-        // Check if this IP already exists in last 24h
-        const existingIndex = visitors.findIndex(v => v.ip === ip);
-        if (existingIndex === -1) {
-          // New unique visitor in 24h
-          visitors.push({ ip, timestamp: now });
-        } else if (isNewFetch) {
-          // Update timestamp for existing visitor
-          visitors[existingIndex].timestamp = now;
-        }
-        
-        localStorage.setItem(VISITOR_COUNT_KEY, JSON.stringify(visitors));
-        setVisitorCount(visitors.length);
-      } catch (error) {
-        console.error('Failed to update visitor count:', error);
-      }
-    };
-
-    fetchVisitorInfo();
-  }, []);
 
   return (
     <footer className="relative py-16 lg:py-20 border-t border-border bg-card/50">
@@ -111,18 +28,18 @@ const Footer = () => {
             
             {/* Visitor Stats */}
             <div className="mt-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-primary" />
-                <span className="font-medium text-foreground">
-                  {visitorCount} {t.footer.visitorsToday}
-                </span>
+                <FreeVisitorCounter
+                  todayCountPrefix=""
+                  todayCountSuffix={` ${t.footer.visitorsToday}`}
+                  totalCountPrefix=""
+                  totalCountSuffix=""
+                  separator=""
+                  showTotalFirst={false}
+                  className="font-medium text-foreground"
+                />
               </div>
-              {visitorInfo && (
-                <div className="text-xs space-y-0.5">
-                  <p><span className="text-muted-foreground">IP:</span> {visitorInfo.ip}</p>
-                  <p><span className="text-muted-foreground">ISP:</span> {visitorInfo.isp}</p>
-                </div>
-              )}
             </div>
           </div>
 

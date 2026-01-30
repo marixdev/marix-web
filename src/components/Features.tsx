@@ -13,6 +13,8 @@ import {
   Network,
   Plug,
   Shield,
+  Gauge,
+  History,
   LucideIcon
 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -20,7 +22,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 interface Feature {
   icon: LucideIcon;
   titleKey: 'sshTerminal' | 'sftpManager' | 'ftpFtps' | 'rdpDesktop' | 'databaseClient' | 'websocket' | 'cloudflareDns' | 
-            'whoisTools' | 'encryption' | 'multiLanguage' | 'lanTransfer' | 'lanSharing' | 'customHotkeys' | 'appLock';
+            'whoisTools' | 'encryption' | 'multiLanguage' | 'lanTransfer' | 'lanSharing' | 'customHotkeys' | 'appLock' | 'serverBenchmark' | 'commandHistory';
   gradient: string;
   bgColor: string;
 }
@@ -28,8 +30,13 @@ interface Feature {
 const Features = () => {
   const { t } = useLanguage();
 
-  // Features based on CHANGELOG - actual Marix capabilities
+  // Features organized by category for better visual grouping
+  // Row 1: Core Connection Protocols
+  // Row 2: Tools & Utilities 
+  // Row 3: Security & Data
+  // Row 4: Convenience Features
   const features: Feature[] = [
+    // === Row 1: Core Protocols ===
     {
       icon: Terminal,
       titleKey: 'sshTerminal',
@@ -54,6 +61,7 @@ const Features = () => {
       gradient: "from-orange-500 to-red-500",
       bgColor: "bg-orange-500/10",
     },
+    // === Row 2: Database & Network Tools ===
     {
       icon: Database,
       titleKey: 'databaseClient',
@@ -63,8 +71,14 @@ const Features = () => {
     {
       icon: Plug,
       titleKey: 'websocket',
-      gradient: "from-lime-500 to-green-500",
-      bgColor: "bg-lime-500/10",
+      gradient: "from-cyan-500 to-teal-500",
+      bgColor: "bg-cyan-500/10",
+    },
+    {
+      icon: Network,
+      titleKey: 'whoisTools',
+      gradient: "from-sky-500 to-blue-500",
+      bgColor: "bg-sky-500/10",
     },
     {
       icon: Globe,
@@ -72,12 +86,7 @@ const Features = () => {
       gradient: "from-orange-500 to-orange-600",
       bgColor: "bg-orange-500/10",
     },
-    {
-      icon: Network,
-      titleKey: 'whoisTools',
-      gradient: "from-cyan-500 to-blue-500",
-      bgColor: "bg-cyan-500/10",
-    },
+    // === Row 3: Security & Backup ===
     {
       icon: Lock,
       titleKey: 'encryption',
@@ -85,16 +94,10 @@ const Features = () => {
       bgColor: "bg-teal-500/10",
     },
     {
-      icon: Languages,
-      titleKey: 'multiLanguage',
-      gradient: "from-pink-500 to-rose-500",
-      bgColor: "bg-pink-500/10",
-    },
-    {
-      icon: Send,
-      titleKey: 'lanTransfer',
-      gradient: "from-indigo-500 to-violet-500",
-      bgColor: "bg-indigo-500/10",
+      icon: Shield,
+      titleKey: 'appLock',
+      gradient: "from-red-500 to-rose-500",
+      bgColor: "bg-red-500/10",
     },
     {
       icon: CloudCog,
@@ -103,16 +106,35 @@ const Features = () => {
       bgColor: "bg-fuchsia-500/10",
     },
     {
+      icon: Send,
+      titleKey: 'lanTransfer',
+      gradient: "from-indigo-500 to-violet-500",
+      bgColor: "bg-indigo-500/10",
+    },
+    // === Row 4: Utilities ===
+    {
+      icon: Gauge,
+      titleKey: 'serverBenchmark',
+      gradient: "from-amber-500 to-orange-500",
+      bgColor: "bg-amber-500/10",
+    },
+    {
+      icon: History,
+      titleKey: 'commandHistory',
+      gradient: "from-slate-500 to-gray-600",
+      bgColor: "bg-slate-500/10",
+    },
+    {
       icon: Code,
       titleKey: 'customHotkeys',
       gradient: "from-green-500 to-emerald-500",
       bgColor: "bg-green-500/10",
     },
     {
-      icon: Shield,
-      titleKey: 'appLock',
-      gradient: "from-red-500 to-rose-500",
-      bgColor: "bg-red-500/10",
+      icon: Languages,
+      titleKey: 'multiLanguage',
+      gradient: "from-pink-500 to-rose-500",
+      bgColor: "bg-pink-500/10",
     },
   ];
 
