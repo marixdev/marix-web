@@ -1,7 +1,7 @@
 import { Terminal, Github, ExternalLink, Heart, MessageCircle, Users, FileText } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Link } from "react-router-dom";
-import { FreeVisitorCounter } from '@rundevelrun/free-visitor-counter';
+import VisitorCounter from './VisitorCounter';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -30,13 +30,8 @@ const Footer = () => {
             <div className="mt-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-primary" />
-                <FreeVisitorCounter
-                  todayCountPrefix=""
-                  todayCountSuffix={` ${t.footer.visitorsToday}`}
-                  totalCountPrefix=""
-                  totalCountSuffix=""
-                  separator=""
-                  showTotalFirst={false}
+                <VisitorCounter
+                  suffix={` ${t.footer.visitorsToday}`}
                   className="font-medium text-foreground"
                 />
               </div>
